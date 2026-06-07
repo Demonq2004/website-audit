@@ -1,5 +1,22 @@
 <?php get_header(); ?>
 
+<?php if ( is_front_page() || is_home() ) : ?>
+    <section class="hero-section">
+        <div class="hero-container">
+            <h1 class="hero-title">Coding with <br><span class="highlight">Accessibility</span></h1>
+            
+            <p class="hero-description">
+                I build robust, inclusive web applications. Because the web is for everyone, and great engineering means leaving no user behind.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">View Featured Work &rarr;</a>
+                <a href="#" class="btn btn-secondary">Read the Blog</a>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
+
 <main class="site-main">
     <div class="container">
         
