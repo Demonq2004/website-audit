@@ -9,41 +9,55 @@
  * Text Domain: web-plugin
  */
 
-// Zabezpieczenie przed bezpośrednim dostępem do pliku
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
-// Sprawdzenie, czy klasa już nie istnieje (zapobiega błędom)
-if ( ! class_exists( 'Web_Plugin' ) ) {
+if (!defined('AUDIT_PLUGIN_DIR')) {
+    define('AUDIT_PLUGIN_DIR', plugin_dir_path(__FILE__));
+}
 
-    class Web_Plugin {
+if (!class_exists('Web_Plugin')) {
+
+    class Web_Plugin
+    {
 
         /**
          * Konstruktor - tutaj rejestrujemy wszystkie akcje i filtry
          */
-        public function __construct() {
-            
-       }
+        public function __construct()
+        {
+            require_once AUDIT_PLUGIN_DIR . 'includes/cpt-projects.php';
+            require_once AUDIT_PLUGIN_DIR . 'includes/acf-fields.php';
+
+        }
 
         /**
          * Funkcja uruchamiana podczas AKTYWACJI wtyczki
          */
-        public function activate() {
+        public function activate()
+        {
+            require_once AUDIT_PLUGIN_DIR . 'includes/cpt-projects.php';
+            if (function_exists('audit_register_project_cpt')) {
+                audit_register_project_cpt();
+            }
+
             flush_rewrite_rules();
         }
 
         /**
          * Funkcja uruchamiana podczas DEZAKTYWACJI wtyczki
          */
-        public function deactivate() {
+        public function deactivate()
+        {
             flush_rewrite_rules();
         }
 
         /**
          * Ładowanie plików CSS i JS na froncie strony
          */
-        public function enqueue_frontend_scripts() {
+        public function enqueue_frontend_scripts()
+        {
             // wp_enqueue_style( 
             //     'moj-plugin-style', 
             //     plugin_dir_url( __FILE__ ) . 'assets/css/style.css', 
@@ -64,22 +78,24 @@ if ( ! class_exists( 'Web_Plugin' ) ) {
         /**
          * Ładowanie plików CSS i JS w kokpicie (Panel Admina)
          */
-        public function enqueue_admin_scripts( $hook ) {
+        public function enqueue_admin_scripts($hook)
+        {
 
         }
 
-        public function render_shortcode( $atts, $content = null ) {
-            $attributes = shortcode_atts( array(
-                'kolor' => 'blue', 
-            ), $atts );
+        public function render_shortcode($atts, $content = null)
+        {
+            $attributes = shortcode_atts(array(
+                'kolor' => 'blue',
+            ), $atts);
 
-            ob_start(); 
+            ob_start();
             ?>
-            
+
             <div class="moj-plugin-pojemnik" style="color: <?php echo esc_attr($attributes['kolor']); ?>;">
                 <h2>To jest test mojego pluginu!</h2>
-                <?php if ( $content ) : ?>
-                    <p><?php echo esc_html( $content ); ?></p>
+                <?php if ($content): ?>
+                    <p><?php echo esc_html($content); ?></p>
                 <?php endif; ?>
             </div>
 
@@ -89,4 +105,7 @@ if ( ! class_exists( 'Web_Plugin' ) ) {
     }
 
     $web_Plugin = new Web_Plugin();
+
+    register_activation_hook( __FILE__, array( $web_Plugin, 'activate' ) );
+    register_deactivation_hook( __FILE__, array( $web_Plugin, 'deactivate' ) );
 }

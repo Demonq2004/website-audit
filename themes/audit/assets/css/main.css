@@ -10,3 +10,7 @@ np:
 
 @import "./_colors.css";
 @import "./_fonts.css";
+
+@import "./single-project.css";
+
+@import "./sections/section.css";
