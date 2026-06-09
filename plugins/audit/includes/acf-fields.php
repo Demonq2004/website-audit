@@ -13,13 +13,6 @@ function audit_register_acf_project_fields()
             'title' => 'Szczegóły Projektu',
             'fields' => array(
                 array(
-                    'key' => 'field_project_card_tags',
-                    'label' => 'Tagi na kartę (oddzielone przecinkiem)',
-                    'name' => 'project_card_tags',
-                    'type' => 'text',
-                    'instructions' => 'Np. React, TypeScript, WCAG',
-                ),
-                array(
                     'key' => 'field_tech_frontend',
                     'label' => 'Frontend (każda technologia w nowej linii)',
                     'name' => 'tech_frontend',

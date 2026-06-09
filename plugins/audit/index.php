@@ -28,6 +28,7 @@ if (!class_exists('Web_Plugin')) {
         public function __construct()
         {
             require_once AUDIT_PLUGIN_DIR . 'includes/cpt-projects.php';
+            require_once AUDIT_PLUGIN_DIR . 'includes/ct-technologies.php';
             require_once AUDIT_PLUGIN_DIR . 'includes/acf-fields.php';
 
         }
@@ -38,6 +39,7 @@ if (!class_exists('Web_Plugin')) {
         public function activate()
         {
             require_once AUDIT_PLUGIN_DIR . 'includes/cpt-projects.php';
+            require_once AUDIT_PLUGIN_DIR . 'includes/ct-technologies.php';
             if (function_exists('audit_register_project_cpt')) {
                 audit_register_project_cpt();
             }
