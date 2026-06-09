@@ -8,5 +8,6 @@ np:
 @import "components.css"; 
 */
 
-@import "./_colors.css";
-@import "./_fonts.css";
+@import './_colors.css';
+@import './_fonts.css';
+@import './_header.css';

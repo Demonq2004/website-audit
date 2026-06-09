@@ -10,20 +10,19 @@
 <?php wp_body_open(); ?>
 
 <header class="site-header">
-    <div class="container">
-        <h1 class="site-title">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <?php bloginfo( 'name' ); ?>
+    <div class="header-container">
+        <div>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title">
+                DevPortfolio
             </a>
-        </h1>
-        
-        <p class="site-description"><?php bloginfo( 'description' ); ?></p>
+        </div>
 
-        <nav class="main-navigation">
+        <nav class="site-navigation">
             <?php
             wp_nav_menu( array(
                 'theme_location' => 'primary',
                 'container'      => false,
+                'menu_class'     => 'primary-menu-list',
                 'fallback_cb'    => false, 
             ) );
             ?>
