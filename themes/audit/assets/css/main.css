@@ -7,3 +7,10 @@ np:
 @import "layout.css";
 @import "components.css"; 
 */
+
+@import "./_colors.css";
+@import "./_fonts.css";
+
+@import "./single-project.css";
+
+@import "./sections/project.css";
