@@ -45,6 +45,19 @@
         padding: 2rem;
     }
 
+    &:hover {
+        border-color: var(--color-dark-gray);
+
+        .audit-card-image {
+            border-color: var(--color-gray);
+        }
+    }
+
+    &:focus-within {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--color-blue-500);
+    }
+
     .audit-card-top {
         display: flex;
         flex-direction: column;
@@ -116,6 +129,15 @@
                 transition: color 0.2s;
                 border-radius: 0.125rem;
                 display: flex;
+
+                &:hover {
+                    color: var(--color-white);
+                }
+
+                &:focus-visible {
+                    outline: none;
+                    box-shadow: 0 0 0 2px var(--color-blue-400);
+                }
             }
         }
     }
@@ -165,26 +187,4 @@
 
         }
     }
-}
-
-.audit-team-card:hover {
-    border-color: var(--color-dark-gray);
-}
-
-.audit-team-card:hover .audit-card-image {
-    border-color: var(--color-gray);
-}
-
-.audit-team-card:focus-within {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-blue-500);
-}
-
-.audit-team-card .audit-card-socials a:hover {
-    color: var(--color-white);
-}
-
-.audit-team-card .audit-card-socials a:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-blue-400);
 }
