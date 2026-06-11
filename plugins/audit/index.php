@@ -28,6 +28,7 @@ if (!class_exists('Web_Plugin')) {
         public function __construct()
         {
             require_once AUDIT_PLUGIN_DIR . 'includes/cpt-projects.php';
+            require_once AUDIT_PLUGIN_DIR . 'includes/cpt-team.php'; 
             require_once AUDIT_PLUGIN_DIR . 'includes/ct-technologies.php';
             require_once AUDIT_PLUGIN_DIR . 'includes/acf-fields.php';
 
@@ -38,10 +39,14 @@ if (!class_exists('Web_Plugin')) {
          */
         public function activate()
         {
-            require_once AUDIT_PLUGIN_DIR . 'includes/cpt-projects.php';
-            require_once AUDIT_PLUGIN_DIR . 'includes/ct-technologies.php';
             if (function_exists('audit_register_project_cpt')) {
                 audit_register_project_cpt();
+            }
+            if (function_exists('register_technologies_taxonomy')) { 
+                register_technologies_taxonomy();
+            }
+            if (function_exists('create_team_post_type')) {
+                create_team_post_type();
             }
 
             flush_rewrite_rules();
@@ -108,6 +113,6 @@ if (!class_exists('Web_Plugin')) {
 
     $web_Plugin = new Web_Plugin();
 
-    register_activation_hook( __FILE__, array( $web_Plugin, 'activate' ) );
-    register_deactivation_hook( __FILE__, array( $web_Plugin, 'deactivate' ) );
+    register_activation_hook(__FILE__, array($web_Plugin, 'activate'));
+    register_deactivation_hook(__FILE__, array($web_Plugin, 'deactivate'));
 }

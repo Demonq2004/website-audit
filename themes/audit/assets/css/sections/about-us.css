@@ -1,0 +1,190 @@
+.audit-team-section {
+    margin: 5rem 0;
+
+
+    .audit-team-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+
+        svg {
+            color: var(--color-blue-400);
+        }
+
+        h2 {
+            font-size: var(--font-size-xxxl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin: 0;
+        }
+    }
+
+    .audit-team-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.audit-team-card {
+    background-color: var(--color-background2);
+    border: 1px solid var(--color-background3);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: box-shadow 0.2s, border-color 0.2s;
+
+    @media (min-width: 768px) {
+        padding: 2rem;
+    }
+
+    .audit-card-top {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        @media (min-width: 640px) {
+            flex-direction: row;
+        }
+    }
+
+    .audit-card-image-wrapper {
+        flex-shrink: 0;
+        width: 6rem;
+        height: 6rem;
+
+        @media (min-width: 640px) {
+            width: 8rem;
+            height: 8rem;
+        }
+
+        .audit-card-image,
+        .audit-card-image-fallback {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            border: 1px solid var(--color-background3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.2s;
+        }
+
+        .audit-card-image-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-background3);
+            color: var(--color-gray);
+        }
+    }
+
+    .audit-card-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h3 {
+            font-size: var(--font-size-xxl);
+            font-weight: 600;
+            color: var(--color-white);
+            margin: 0 0 0.25rem 0;
+        }
+
+        .audit-card-role {
+            color: var(--color-blue-400);
+            font-weight: 500;
+            font-size: var(--font-size-lg);
+            margin: 0 0 0.75rem 0;
+        }
+
+        .audit-card-socials {
+            display: flex;
+            gap: 0.75rem;
+            position: relative;
+            z-index: 10;
+
+            a {
+                color: var(--color-light-gray);
+                transition: color 0.2s;
+                border-radius: 0.125rem;
+                display: flex;
+            }
+        }
+    }
+
+    .audit-card-bio {
+        color: var(--color-description);
+        font-size: var(--font-size-md);
+        line-height: 1.6;
+        flex-grow: 1;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .audit-card-expertise {
+        margin-top: auto;
+        position: relative;
+        z-index: 10;
+
+        h4 {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0 0 0.75rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+
+            li {
+                background-color: var(--color-background3);
+                border: 1px solid var(--color-dark-gray);
+                border-radius: 9999px;
+                display: block;
+                padding: 0.5rem 1rem;
+                color: var(--color-blue-100);
+                font-size: var(--font-size-sm);
+                font-weight: 500;
+            }
+
+        }
+    }
+}
+
+.audit-team-card:hover {
+    border-color: var(--color-dark-gray);
+}
+
+.audit-team-card:hover .audit-card-image {
+    border-color: var(--color-gray);
+}
+
+.audit-team-card:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-blue-500);
+}
+
+.audit-team-card .audit-card-socials a:hover {
+    color: var(--color-white);
+}
+
+.audit-team-card .audit-card-socials a:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-blue-400);
+}

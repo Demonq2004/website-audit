@@ -22,7 +22,7 @@ $code_filename = get_field('code_filename');
 $code_snippet = get_field('code_snippet');
 ?>
 
-<main class="project-main">
+<main class="container">
     <article class="project-container">
         
         <header class="project-header">
