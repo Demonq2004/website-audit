@@ -16,6 +16,7 @@ np:
 
 @import './sections/project.css';
 @import './sections/about-us.css';
+@import './sections/hero.css';
 
 body {
   background-color: var(--color-background);
