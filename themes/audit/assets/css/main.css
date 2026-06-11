@@ -13,6 +13,7 @@ np:
 
 @import './single-project.css';
 @import './header.css';
+@import './footer.css';
 
 @import './sections/project.css';
 @import './sections/about-us.css';
@@ -20,11 +21,11 @@ np:
 
 body {
   background-color: var(--color-background);
-  padding: 0rem 1.25rem;
   font-family: var(--font-family-base);
 
   .container {
     max-width: 72rem;
+    padding: 0rem 1.25rem;
     margin: 0 auto;
   }
 }
