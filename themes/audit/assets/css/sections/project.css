@@ -1,0 +1,103 @@
+.featured-projects {
+
+    margin: 5rem 0;
+
+    .featured-projects__header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+
+        svg {
+            color: var(--color-blue-400);
+            width: 2rem;
+            height: 2rem;
+        }
+
+        h2 {
+            font-size: var(--font-size-xxxl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin: 0;
+        }
+    }
+
+    .projects-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .project-card {
+        position: relative;
+        background-color: rgba(23, 23, 23, 0.5);
+        border: 1px solid var(--color-background3);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: var(--color-background2);
+        }
+
+        &:focus-within {
+            outline: 2px solid var(--color-blue-400);
+            outline-offset: 4px;
+        }
+
+        .project-card__title {
+            font-size: var(--font-size-xxl);
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+
+            .project-card__link {
+                color: var(--color-white);
+                text-decoration: none;
+                outline: none;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .project-card__description {
+            font-size: var(--font-size-lg);
+            color: var(--color-description);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .project-card__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+
+            li {
+                background-color: var(--color-background3);
+                border: 1px solid var(--color-dark-gray);
+                border-radius: 9999px;
+                display: block;
+                padding: 0.5rem 1rem;
+                color: var(--color-blue-100);
+                font-size: var(--font-size-sm);
+                font-weight: 500;
+            }
+        }
+    }
+}
