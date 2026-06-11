@@ -1,0 +1,11 @@
+/*
+
+!plugins/
+!themes/
+
+plugins/*
+themes/*
+
+!plugins/audit/
+!themes/audit/
+!.gitignore
