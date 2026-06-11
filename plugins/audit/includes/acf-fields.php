@@ -2,9 +2,9 @@
 if (!defined('ABSPATH'))
     exit;
 
-add_action('acf/init', 'audit_register_acf_project_fields');
+add_action('acf/init', 'audit_register_acf_fields');
 
-function audit_register_acf_project_fields()
+function audit_register_acf_fields()
 {
     if (function_exists('acf_add_local_field_group')) {
 
@@ -87,6 +87,47 @@ function audit_register_acf_project_fields()
                         'param' => 'post_type',
                         'operator' => '==',
                         'value' => 'project',
+                    ),
+                ),
+            ),
+        ));
+
+        acf_add_local_field_group(array(
+            'key' => 'group_audit_team_details',
+            'title' => 'Dane Członka Zespołu',
+            'fields' => array(
+                array(
+                    'key' => 'field_team_role',
+                    'label' => 'Rola',
+                    'name' => 'role',
+                    'type' => 'text',
+                    'instructions' => 'Napisz stanowisko, np. Frontend Developer',
+                ),
+                array(
+                    'key' => 'field_team_github',
+                    'label' => 'GitHub URL',
+                    'name' => 'github',
+                    'type' => 'url',
+                ),
+                array(
+                    'key' => 'field_team_linkedin',
+                    'label' => 'LinkedIn URL',
+                    'name' => 'linkedin',
+                    'type' => 'url',
+                ),
+                array(
+                    'key' => 'field_team_twitter',
+                    'label' => 'Twitter URL',
+                    'name' => 'twitter',
+                    'type' => 'url',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'team_member',
                     ),
                 ),
             ),

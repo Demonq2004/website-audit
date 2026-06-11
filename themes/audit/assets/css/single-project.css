@@ -1,15 +1,6 @@
-.project-main {
-    background-color: var(--color-background);
-    padding: 3rem 1rem;
-    font-family: var(--font-family-base);
-    color: var(--color-text);
-
-    @media (min-width: 640px) {
-        padding: 4rem 1.5rem;
-    }
+.container {
 
     .project-container {
-        max-width: 56rem;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
