@@ -17,6 +17,12 @@
             </a>
         </div>
 
+        <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+
         <nav class="site-navigation">
             <?php
             wp_nav_menu( array(
