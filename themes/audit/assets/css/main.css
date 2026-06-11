@@ -10,4 +10,19 @@ np:
 
 @import "./_colors.css";
 @import "./_fonts.css";
-@import "./_hero.css";
+
+@import "./single-project.css";
+
+@import "./sections/project.css";
+@import "./sections/about-us.css";
+
+body {
+    background-color: var(--color-background);
+    padding: 5rem 1.25rem;
+    font-family: var(--font-family-base);
+
+    .container{
+        max-width: 72rem;
+        margin: 0 auto;
+    }
+}
