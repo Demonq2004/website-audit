@@ -8,22 +8,23 @@ np:
 @import "components.css"; 
 */
 
-@import "./_colors.css";
-@import "./_fonts.css";
+@import './_colors.css';
+@import './_fonts.css';
 
-@import "./single-project.css";
+@import './single-project.css';
+@import './header.css';
 
-@import "./sections/project.css";
-@import "./sections/about-us.css";
-@import "./sections/hero.css";
+@import './sections/project.css';
+@import './sections/about-us.css';
+@import './sections/hero.css';
 
 body {
-    background-color: var(--color-background);
-    padding: 5rem 1.25rem;
-    font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  padding: 0rem 1.25rem;
+  font-family: var(--font-family-base);
 
-    .container{
-        max-width: 72rem;
-        margin: 0 auto;
-    }
+  .container {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
 }
