@@ -11,6 +11,12 @@ np:
 @import './_colors.css';
 @import './_fonts.css';
 
+@import "./single-project.css";
+@import "./blog-index.css";
+@import "./blog-single.css";
+
+
+
 @import './single-project.css';
 @import './header.css';
 @import './footer.css';
@@ -18,6 +24,7 @@ np:
 @import './sections/project.css';
 @import './sections/about-us.css';
 @import './sections/hero.css';
+@import "./sections/blog.css";
 
 body {
   background-color: var(--color-background);
