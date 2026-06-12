@@ -2,6 +2,7 @@
 
 <main class="container">
     
+    <?php include_once get_template_directory() . '/templates/hero-section.php'; ?>
     <?php include_once get_template_directory() . '/templates/project-section.php'; ?>
     
     <?php include_once get_template_directory() . '/templates/blog-section.php'; ?>
