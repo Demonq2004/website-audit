@@ -12,12 +12,9 @@ np:
 @import './_fonts.css';
 
 @import "./single-project.css";
-@import "./blog-index.css";
 @import "./blog-single.css";
+@import "./blog-index.css";
 
-
-
-@import './single-project.css';
 @import './header.css';
 @import './footer.css';
 
@@ -27,12 +24,12 @@ np:
 @import "./sections/blog.css";
 
 body {
-  background-color: var(--color-background);
-  font-family: var(--font-family-base);
+    background-color: var(--color-background);
+    font-family: var(--font-family-base);
 
-  .container {
-    max-width: 72rem;
-    padding: 0rem 1.25rem;
-    margin: 0 auto;
-  }
+    .container {
+        max-width: 72rem;
+        padding: 0rem 1.25rem 1rem 1.25rem;
+        margin: 0 auto;
+    }
 }

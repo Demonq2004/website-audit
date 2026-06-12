@@ -64,6 +64,12 @@
   /* 36px na 1920px */
   --font-size-xxxl: clamp(2rem, 1.875vw, 2.25rem);
 
+  /* 42px na 1920px */
+  --font-size-xxxxl: clamp(3rem, 2.175vw, 3.25rem);
+
+
+  --font-size-hero: clamp(4rem, 6vw, 5.5rem);
+
   --font-family-base: 'Poppins', sans-serif;
 }
 
