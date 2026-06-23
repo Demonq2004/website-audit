@@ -9,3 +9,4 @@ themes/*
 !plugins/audit/
 !themes/audit/
 !.gitignore
+!docker-compose.yml
