@@ -9,6 +9,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<a href="#main-content" class="skip-link sr-only">Skip to content</a>
 <header class="site-header">
     <div class="header-container">
         <div>
