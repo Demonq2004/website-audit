@@ -1,10 +1,9 @@
 <?php
-
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
-    'post_type' => 'project',
-    'posts_per_page' => 4,
-    'paged' => $paged,
+    'post_type'      => 'project',
+    'posts_per_page' => -1,
+    'order'          => 'ASC',
+    'orderby'        => 'title'
 );
 
 $projects_query = new WP_Query($args);
@@ -28,26 +27,44 @@ $projects_query = new WP_Query($args);
                 while ($projects_query->have_posts()):
                     $projects_query->the_post();
                     $technologies = get_the_terms(get_the_ID(), 'technology');
+                    
+                    $image_1 = get_field('project_image_1');
                     ?>
                     <article class="project-card">
-                        <h3 class="project-card__title">
-                            <a href="<?php the_permalink(); ?>" class="project-card__link">
-                                <?php the_title(); ?>
-                            </a>
-                        </h3>
-                        <p class="project-card__description">
-                            <?php echo get_the_excerpt(); ?>
-                        </p>
+                        
+                        <div class="project-card__image-wrapper">
+                            <?php if ($image_1): ?>
+                                <img 
+                                    src="<?php echo esc_url($image_1['sizes']['large']); ?>" 
+                                    alt="<?php echo esc_attr($image_1['alt'] ? $image_1['alt'] : get_the_title()); ?>" 
+                                    class="project-card__image"
+                                    loading="lazy"
+                                />
+                            <?php else: ?>
+                                <div class="project-card__image placeholder-image"></div>
+                            <?php endif; ?>
+                        </div>
 
-                        <?php if ($technologies && !is_wp_error($technologies)): ?>
-                            <ul aria-label="Technologies used" class="project-card__tags">
-                                <?php foreach ($technologies as $tech): ?>
-                                    <li>
-                                        <?php echo esc_html($tech->name); ?>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        <?php endif; ?>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">
+                                <a href="<?php the_permalink(); ?>" class="project-card__link">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h3>
+                            <p class="project-card__description">
+                                <?php echo get_the_excerpt(); ?>
+                            </p>
+
+                            <?php if ($technologies && !is_wp_error($technologies)): ?>
+                                <ul aria-label="Technologies used" class="project-card__tags">
+                                    <?php foreach ($technologies as $tech): ?>
+                                        <li>
+                                            <?php echo esc_html($tech->name); ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                        </div>
                     </article>
                 <?php endwhile;
                 wp_reset_postdata(); endif; ?>

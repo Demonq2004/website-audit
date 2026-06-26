@@ -8,13 +8,10 @@
         </p>
     </header>
 
-    <!-- Wyszukiwarka i Filtry Kategori -->
     <section aria-label="Search and filter articles" class="blog-filter-section">
         
-        <!-- Formularz wyszukiwania zgodny z WP standard -->
         <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="search-form">
             <div class="search-wrapper">
-                <label htmlFor="search-articles" class="sr-only">Search articles</label>
                 <div class="search-icon" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </div>
@@ -26,17 +23,14 @@
                     placeholder="Search by title or keyword..."
                     value="<?php echo get_search_query(); ?>"
                 />
-                <!-- Ograniczenie wyników wyszukiwania tylko do zwykłych wpisów -->
                 <input type="hidden" name="post_type" value="post" />
             </div>
         </form>
 
-        <!-- Filtry kategorii -->
         <div>
             <h2 id="category-filter-heading" class="sr-only">Filter by Category</h2>
             <ul aria-labelledby="category-filter-heading" class="category-list">
                 <?php
-                // Link do strony głównej bloga (stan "All")
                 $blog_page_url = get_permalink(get_option('page_for_posts'));
                 $is_all_active = !is_category() ? 'active' : '';
                 ?>
@@ -62,14 +56,12 @@
         </div>
     </section>
 
-    <!-- Rezultaty zapytania -->
     <section aria-live="polite" aria-atomic="true">
         <h2 class="sr-only">Article Results</h2>
 
         <?php if (have_posts()) : ?>
             <ul class="articles-list">
                 <?php while (have_posts()) : the_post(); 
-                    // Pobieranie kategorii dla danego wpisu
                     $cats = get_the_category();
                     $cat_name = !empty($cats) ? esc_html($cats[0]->name) : 'General';
                 ?>
@@ -103,7 +95,6 @@
                 <?php endwhile; ?>
             </ul>
 
-            <!-- Paginacja -->
             <div class="pagination">
                 <?php
                 echo paginate_links(array(

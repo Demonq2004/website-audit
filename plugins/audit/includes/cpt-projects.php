@@ -14,8 +14,9 @@ function audit_register_project_cpt() {
 
     $args = array(
         'labels'                => $labels,
-        'public'                => true,
-        'has_archive'           => true,
+        'public'                => true, 
+        'exclude_from_search'   => true,
+        'has_archive'           => false,
         'menu_icon'             => 'dashicons-portfolio',
         'rewrite'               => array( 'slug' => 'project' ),
         'supports'              => array( 'title', 'excerpt' ), 

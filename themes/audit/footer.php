@@ -4,7 +4,7 @@
            <p>&copy; <?php echo date('Y'); ?> DevPortfolio. Built with accessibility in mind.</p>
         </div>
         <div class="footer-socials">
-            <a href="#" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/Demonq2004/website-audit" target="_blank" aria-label="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.5-1.4 6.5-7a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 5.6 3.36 6.65 6.5 7a4.8 4.8 0 0 0-1 3.02V22"/><path d="M9 20.5 3 19"/></svg>
             </a>
             <a href="#" target="_blank" aria-label="LinkedIn">
