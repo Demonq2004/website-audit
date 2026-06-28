@@ -8,7 +8,7 @@
   </p>
   
   <div class="hero-actions">
-    <a href="<?php echo esc_url( home_url( '/project/a11y-dashboard' ) ); ?>" class="btn btn-primary">
+    <a href="<?php echo esc_url( home_url( '#featured-projects' ) ); ?>" class="btn btn-primary">
       View Featured Work
       <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <line x1="5" y1="12" x2="19" y2="12"></line>

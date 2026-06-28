@@ -9,7 +9,7 @@ $args = array(
 $projects_query = new WP_Query($args);
 ?>
 
-<section class="featured-projects" aria-labelledby="projects-heading">
+<section class="featured-projects" aria-labelledby="projects-heading" id="featured-projects">
     <div class="featured-projects__container">
         <div class="featured-projects__header">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
