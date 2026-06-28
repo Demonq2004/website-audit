@@ -1,0 +1,217 @@
+.a11y-trigger-btn {
+    position: fixed;
+    left: 1.5rem;
+    bottom: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-blue-400);
+    background-color: var(--color-blue-600);
+    color: var(--color-white);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.a11y-trigger-btn:hover {
+    background-color: var(--color-blue-700);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.a11y-trigger-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-blue-300), 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.a11y-panel {
+    position: fixed;
+    top: 0;
+    left: -340px;
+    width: 320px;
+    height: 100vh;
+    background-color: var(--color-background2);
+    border-right: 1px solid var(--color-background3);
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    visibility: hidden;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+}
+
+.a11y-panel.is-open {
+    left: 0;
+    visibility: visible;
+}
+
+.a11y-panel-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem 1.5rem;
+}
+
+.a11y-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-background3);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.a11y-panel-header h2 {
+    font-size: var(--font-size-xl2);
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0;
+}
+
+.a11y-close-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-light-gray);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.15s;
+}
+
+.a11y-close-btn:hover {
+    color: var(--color-white);
+}
+
+.a11y-close-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-blue-400);
+    border-radius: 0.25rem;
+}
+
+.a11y-panel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.a11y-option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-background3);
+    padding: 1rem;
+    border-radius: 0.75rem;
+}
+
+.a11y-option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.a11y-option-title {
+    font-weight: 600;
+    font-size: var(--font-size-md);
+    color: var(--color-white);
+}
+
+.a11y-option-desc {
+    font-size: var(--font-size-xs);
+    color: var(--color-light-gray);
+}
+
+.a11y-toggle {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-dark-gray);
+    background-color: var(--color-background2);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.a11y-toggle:hover {
+    border-color: var(--color-light-gray);
+    color: var(--color-white);
+}
+
+.a11y-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-blue-400);
+}
+
+.a11y-toggle[aria-pressed="true"] {
+    background-color: var(--color-blue-600);
+    border-color: var(--color-blue-400);
+    color: var(--color-white);
+}
+
+body.light-theme {
+    --color-background: #f8fafc;
+    --color-background2: #ffffff;
+    --color-background3: #e2e8f0;
+    --color-dark-gray: #cbd5e1;
+
+    --color-white: #0f172a;
+    --color-text: #1e293b;
+    --color-description: #334155;
+    --color-light-gray: #475569;
+    --color-gray: #64748b;
+
+    --color-blue-100: #0f172a;
+    --color-blue-300: #1d4ed8;
+    --color-blue-400: #2563eb;
+    --color-blue-500: #1d4ed8;
+    --color-blue-600: #1d4ed8;
+}
+
+body.light-theme .site-header {
+    background-color: rgba(248, 250, 252, 0.9);
+}
+
+body.light-theme .project-card,
+body.light-theme .article-card {
+    background-color: #ffffff;
+}
+
+body.light-theme .btn-primary,
+body.light-theme .category-button.active,
+body.light-theme .page-numbers.current,
+body.light-theme .a11y-trigger-btn,
+body.light-theme .a11y-btn[aria-pressed="true"],
+body.light-theme .a11y-toggle[aria-pressed="true"] {
+    color: #ffffff !important;
+}
+
+body.text-large {
+    --font-size-xs: clamp(0.9rem, 0.75vw, 0.9rem);
+    --font-size-sm: clamp(0.9rem, 0.8vw, 1rem);
+    --font-size-md: clamp(1rem, 0.95vw, 1.15rem);
+    --font-size-lg: clamp(1.15rem, 1.1vw, 1.3rem);
+    --font-size-xl: clamp(1.3rem, 1.2vw, 1.45rem);
+    --font-size-xl2: clamp(1.3rem, 1.3vw, 1.55rem);
+    --font-size-xxl: clamp(1.45rem, 1.45vw, 1.7rem);
+    --font-size-xxl2: clamp(1.7rem, 1.6vw, 1.95rem);
+    --font-size-xxxl: clamp(2.2rem, 2.1vw, 2.5rem);
+    --font-size-xxxxl: clamp(2.2rem, 2.3vw, 2.85rem);
+}
+
+body.dyslexia-font {
+    --font-family-base: 'Arial', 'Helvetica Neue', sans-serif !important;
+}
+
+body.dyslexia-font,
+body.dyslexia-font * {
+    font-family: var(--font-family-base) !important;
+    letter-spacing: 0.12em !important;
+    word-spacing: 0.18em !important;
+    line-height: 1.8 !important;
+}

@@ -23,6 +23,8 @@ np:
 @import './sections/hero.css';
 @import "./sections/blog.css";
 
+@import './a11y.css';
+
 body {
     background-color: var(--color-background);
     font-family: var(--font-family-base);
@@ -32,4 +34,8 @@ body {
         padding: 0rem 1.25rem 1rem 1.25rem;
         margin: 0 auto;
     }
+}
+
+#main-content:focus {
+    outline: none;
 }

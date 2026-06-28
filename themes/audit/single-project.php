@@ -27,7 +27,7 @@ $image_3 = get_field('project_image_3');
 $image_4 = get_field('project_image_4');
 ?>
 
-<main class="container">
+<main id="main-content" tabindex="-1" class="container">
     <article class="project-container">
 
         <header class="project-header">

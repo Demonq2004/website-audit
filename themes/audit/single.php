@@ -13,7 +13,7 @@ $blog_page_id = get_option('page_for_posts');
 $blog_url = $blog_page_id ? get_permalink($blog_page_id) : home_url('/blog');
 ?>
 
-<main class="single-post-container">
+<main id="main-content" tabindex="-1" class="single-post-container">
     <?php if (have_posts()) : while (have_posts()) : the_post(); 
         $cats = get_the_category();
         $cat_name = !empty($cats) ? esc_html($cats[0]->name) : 'General';
@@ -60,7 +60,7 @@ $blog_url = $blog_page_id ? get_permalink($blog_page_id) : home_url('/blog');
             <footer class="post-footer">
                 <div class="cta-box">
                     <div>
-                        <h3 class="cta-title">Enjoyed this article?</h3>
+                        <h2 class="cta-title">Enjoyed this article?</h2>
                         <p class="cta-desc">Share it with your network or read more on our blog.</p>
                     </div>
                     <a href="<?php echo esc_url($blog_url); ?>" class="cta-button">
